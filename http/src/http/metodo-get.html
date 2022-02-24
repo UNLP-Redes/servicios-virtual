@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>M&eacute;todos HTTP: GET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="./bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div id="wrap">
+        
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="../index.html"><i class="icon-home icon-white"></i></a>
+          <a class="brand" href="https://catedras.info.unlp.edu.ar" target="_blank">Redes y Comunicaciones</a>
+          <a class="brand" href="http://www.info.unlp.edu.ar" target="_blank">Facultad de Inform&aacute;tica</a>
+          <a class="brand" href="http://www.unlp.edu.ar" target="_blank">UNLP</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        
+    <h1>M&eacute;todos HTTP: GET</h1>
+    <p>
+    El siguiente formulario utiliza el m&eacute;todo GET para enviar datos al servidor. Analice la captura de paquetes luego de presionar el bot&oacute;n <em>Enviar</em>. Ade&aacute;s identifique diferencias en el cliente respecto del otro m&eacute;todo.
+    <form method="GET" action="metodos-lectura-valores.php">
+    <table border="0" width="80">
+        <tr>
+            <td>Nombre</td><td><input type="text" name="form_nombre" /></td>
+        </tr>
+        <tr>
+            <td>Apellido</td><td><input type="text" name="form_apellido" /></td>
+        </tr>
+        <tr>
+            <td>Email</td><td><input type="text" name="form_mail" /></td>
+        </tr>
+        <tr>
+            <td>Sexo</td><td>Masculino: <input type="radio" name="form_sexo" value="sexo_masc" checked="checked"/> Femenino: <input type="radio" name="form_sexo" value="sexo_fem"/></td>
+        </tr>
+        <tr>
+            <td>Contrase&ntilde;a</td><td><input type="password" name="form_pass" /></td>
+        </tr>
+        <tr>
+            <td nowrap>Recibir confirmaciones por email</td><td><input type="checkbox" name="form_confirma_mail" /></td>
+        </tr>
+        <tr>
+            <td colspan="99"><input type="submit" value="Enviar" class="btn-primary" /></td>
+        </tr>
+    </table>
+    </form>
+    </p>
+
+    </div> 
+    
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Redes y Comunicaciones</p>
+      </div>
+    </div>
+  </body>
+</html>

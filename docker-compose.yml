@@ -1,0 +1,45 @@
+version: "3"
+services:
+
+  http:
+    restart: always
+    build:
+      context: ./http
+    image: ghcr.io/unlp-redes/svc-http:${VERSION:-latest}
+    networks:
+      simunet:
+        ipv4_address: 172.28.0.50
+  dns-redes:
+    restart: always
+    build:
+      context: ./dns-redes
+    image: ghcr.io/unlp-redes/svc-dns-redes:${VERSION:-latest}
+    networks:
+      simunet:
+        ipv4_address: 172.28.0.29
+
+  dns-practica-redes:
+    restart: always
+    build:
+      context: ./dns-practica-redes
+    image: ghcr.io/unlp-redes/svc-dns-practica-redes:${VERSION:-latest}
+    networks:
+      simunet:
+        ipv4_address: 172.28.0.120
+
+  mail:
+    restart: always
+    build:
+      context: ./mail
+    image: ghcr.io/unlp-redes/svc-mail:${VERSION:-latest}
+    networks:
+      simunet:
+        ipv4_address: 172.28.0.90
+
+networks:
+  simunet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/24

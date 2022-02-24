@@ -1,0 +1,27 @@
+;
+; BIND data file for local loopback interface
+;
+@		IN	SOA	ns-sv-b.redes.unlp.edu.ar. root.redes.unlp.edu.ar. (
+				2020031700	  ; Serial
+				    604800	  ; Refresh
+				     86400	  ; Retry
+				   2419200	  ; Expire
+				     86400 )	; Negative Cache TTL
+;
+@		            IN	NS	    ns-sv-a
+@		            IN	NS	    ns-sv-b
+@		            IN	MX	5 	mail
+@		            IN	MX	10 	mail2
+ns-sv-a 604800	IN	A		    172.28.0.30
+ns-sv-b 604800	IN	A		    172.28.0.29
+mail	  	      IN	A		    172.28.0.90
+mail2		        IN	A		    172.28.0.91
+www 	  300	    IN 	A		    172.28.0.50
+ftp		          IN	CNAME		www
+saludo		      IN	TXT		  "HOLA"
+
+$ORIGIN practica.redes.unlp.edu.ar.
+@		  IN	NS		ns1.practica.redes.unlp.edu.ar.
+@		  IN	NS		ns2.practica.redes.unlp.edu.ar.
+ns1		IN	A		  172.28.0.120
+ns2		IN	A		  172.28.0.121

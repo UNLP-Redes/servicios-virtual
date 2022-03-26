@@ -1,0 +1,7 @@
+GET /http/HTTP-1.1/ HTTP/1.0
+User-Agent: curl/7.38.0
+Host: www.redes.unlp.edu.ar
+Accept: */*
+
+
+

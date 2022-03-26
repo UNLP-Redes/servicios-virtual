@@ -1,11 +1,15 @@
-FROM httpd:2.4-alpine
+FROM alpine:3.15
 
-RUN apk --no-cache add php7-apache2
+RUN apk --no-cache add php7-apache2 && rm -Rf /var/www/localhost/htdocs/*
 
-COPY --chown=www-data:www-data src/ /usr/local/apache2/htdocs/
+COPY src /var/www/localhost/htdocs/
+COPY conf/restringido.conf /etc/apache2/conf.d/
+COPY conf/htpasswd /etc/apache2/
 
-COPY conf/restringido.conf /usr/local/apache2/conf/
+ENV APACHE_RUN_USER apache
+ENV APACHE_RUN_GROUP apache
+ENV APACHE_LOG_DIR /var/log/apache2
 
-COPY conf/htpasswd /usr/local/apache2/conf/
+RUN chown -R apache:apache /var/www/localhost/htdocs/
 
-RUN echo "Include conf/restringido.conf" >> /usr/local/apache2/conf/httpd.conf
+CMD ["httpd", "-D", "FOREGROUND"]

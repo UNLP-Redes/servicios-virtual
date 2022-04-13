@@ -2,4 +2,3 @@
 
 postfix start
 dovecot -F
-exec "$@"
